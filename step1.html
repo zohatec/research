@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Services — ARC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body class="booking-page">
+
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="ARC Logo" />
+        <span>ARC</span>
+      </a>
+      <a href="index.html" class="back-to-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+    </div>
+  </header>
+
+  <main class="booking-main">
+    <div class="booking-container">
+
+      <div class="progress-bar-wrap">
+        <div class="progress-step active" id="ps1">
+          <div class="progress-dot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 3h6l3 7-6 11-6-11z"/></svg>
+          </div>
+          <span>Select Service</span>
+        </div>
+        <div class="progress-line" id="pline"></div>
+        <div class="progress-step" id="ps2">
+          <div class="progress-dot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="16" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+          <span>Application Form</span>
+        </div>
+      </div>
+
+      <div class="booking-card">
+        <div class="booking-card-header">
+          <div class="service-badge" id="serviceBadge"></div>
+          <h1 class="booking-title" id="pageTitle">Select Services</h1>
+          <p class="booking-subtitle">Choose the service(s) you need. You may select multiple.</p>
+        </div>
+
+        <div class="selection-counter">
+          <span class="counter-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <span id="countLabel"><strong>0</strong> service(s) selected</span>
+          <span class="counter-hint">— select at least 1 to continue</span>
+        </div>
+
+        <!-- Service cards rendered by JS -->
+        <div class="svc-card-grid" id="serviceGrid"></div>
+
+        <!-- Total price bar -->
+        <div class="price-bar" id="priceBar" style="display:none;">
+          <div class="price-bar-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Estimated Total
+          </div>
+          <div class="price-bar-amount" id="totalPrice">BDT 0</div>
+        </div>
+
+        <div class="booking-actions">
+          <a href="index.html" class="btn-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Go Back
+          </a>
+          <button class="btn-continue" id="continueBtn" disabled onclick="goToStep2()">
+            Continue
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    var SERVICES = [
+      {
+        title: 'Consultation',
+        icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+        color: '#0f766e',
+        items: [
+          {
+            name: 'One-on-one Expert Session',
+            desc: 'A dedicated session with a domain expert to discuss your research challenge, clarify concepts, and receive actionable guidance.',
+            price: 500
+          },
+          {
+            name: 'Problem Identification & Framing',
+            desc: 'Work with a specialist to clearly define your research problem, set objectives, and establish a focused scope for your study.',
+            price: 800
+          },
+          {
+            name: 'Literature Search Guidance',
+            desc: 'Get expert help in searching, filtering, and organizing relevant literature using databases like PubMed, Scopus, and Google Scholar.',
+            price: 600
+          }
+        ]
+      },
+      {
+        title: 'Protocol',
+        icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h10"/></svg>',
+        color: '#0d9488',
+        items: [
+          {
+            name: 'Study Design & Methodology',
+            desc: 'Expert assistance in selecting the right study design—RCT, cohort, cross-sectional—and developing a robust methodology aligned with your objectives.',
+            price: 2500
+          },
+          {
+            name: 'Ethics Committee Preparation',
+            desc: 'Comprehensive support in drafting and organizing all documents required for institutional ethics committee (IEC/IRB) approval.',
+            price: 1500
+          },
+          {
+            name: 'Sample Size Calculation',
+            desc: 'Statistically sound sample size determination using appropriate formulas and software, with a clear justification report.',
+            price: 800
+          },
+          {
+            name: 'Data Collection Plan',
+            desc: 'Design of structured data collection tools—questionnaires, CRFs, checklists—tailored to your study\'s specific data needs.',
+            price: 1200
+          },
+          {
+            name: 'Statistical Analysis Plan (SAP)',
+            desc: 'A detailed pre-specified plan outlining the statistical methods, tests, and software to be used for analyzing your research data.',
+            price: 1500
+          },
+          {
+            name: 'Timeline & Budgeting',
+            desc: 'A realistic project timeline (Gantt chart) and itemized budget estimation to help you plan and manage your research efficiently.',
+            price: 700
+          },
+          {
+            name: 'Regulatory Compliance',
+            desc: 'Guidance on ensuring your study complies with national and international research regulations, including GCP and Helsinki Declaration principles.',
+            price: 1000
+          },
+          {
+            name: 'Informed Consent Drafting',
+            desc: 'Preparation of clear, participant-friendly informed consent forms (ICF) in English and local language as required.',
+            price: 600
+          }
+        ]
+      },
+      {
+        title: 'Thesis & Dissertation',
+        icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 6 3 6 3s3 0 6-3v-5"/></svg>',
+        color: '#0f766e',
+        items: [
+          {
+            name: 'Topic Selection & Refinement',
+            desc: 'Consultation to identify a feasible, original, and academically significant thesis topic aligned with your field and institutional requirements.',
+            price: 800
+          },
+          {
+            name: 'Proposal Writing',
+            desc: 'Full support in writing a well-structured research proposal covering background, rationale, objectives, methodology, and references.',
+            price: 3000
+          },
+          {
+            name: 'Literature Review',
+            desc: 'Systematic and narrative literature review services, covering search strategy, critical appraisal, synthesis, and proper citation.',
+            price: 2500
+          },
+          {
+            name: 'Methodology Design',
+            desc: 'Detailed design of the methods chapter including study type, population, sampling, tools, data collection, and analysis approach.',
+            price: 2000
+          },
+          {
+            name: 'Data Analysis & Interpretation',
+            desc: 'Professional analysis of your collected data using SPSS, R, or Stata, with clear interpretation of results in context.',
+            price: 3000
+          },
+          {
+            name: 'Chapter-wise Writing Support',
+            desc: 'Guided writing assistance for each thesis chapter—Introduction, Methods, Results, Discussion, Conclusion—with expert feedback.',
+            price: 4000
+          },
+          {
+            name: 'Formatting & Citation',
+            desc: 'Full document formatting per your institution\'s guidelines and citation management (APA, Vancouver, Harvard, etc.) using Mendeley or Zotero.',
+            price: 1000
+          },
+          {
+            name: 'Defense Preparation',
+            desc: 'Mock defense sessions, slide preparation coaching, and anticipated Q&A preparation to help you present confidently.',
+            price: 1500
+          },
+          {
+            name: 'Revision & Resubmission',
+            desc: 'Expert assistance in addressing examiner comments and revising the thesis for resubmission, ensuring all feedback is properly incorporated.',
+            price: 2000
+          },
+          {
+            name: 'Plagiarism Check & Correction',
+            desc: 'Thorough plagiarism screening using Turnitin or iThenticate, followed by paraphrasing and rewriting to bring similarity within acceptable limits.',
+            price: 800
+          },
+          {
+            name: 'Final Submission Guidance',
+            desc: 'Step-by-step support through the final submission process including print, binding, digital submission, and repository upload.',
+            price: 500
+          }
+        ]
+      },
+      {
+        title: 'Data Analysis',
+        icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>',
+        color: '#14b8a6',
+        items: [
+          {
+            name: 'Statistical Analysis (SPSS/R/Stata)',
+            desc: 'Comprehensive quantitative data analysis using industry-standard software, including descriptive, inferential, and multivariate techniques.',
+            price: 3500
+          },
+          {
+            name: 'Data Visualization',
+            desc: 'Creation of publication-quality charts, graphs, and infographics to clearly represent your research findings.',
+            price: 1500
+          },
+          {
+            name: 'Regression & Correlation Analysis',
+            desc: 'In-depth regression modeling (linear, logistic, Cox) and correlation analysis with result interpretation and model diagnostics.',
+            price: 2000
+          },
+          {
+            name: 'Report-ready Output',
+            desc: 'Delivery of fully formatted analysis output tables and figures ready for direct insertion into your thesis, paper, or report.',
+            price: 1000
+          }
+        ]
+      },
+      {
+        title: 'Journal Article & Publication',
+        icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>',
+        color: '#0d9488',
+        items: [
+          {
+            name: 'Manuscript Writing & Editing',
+            desc: 'Professional writing or editing of full research manuscripts following IMRAD structure with language polishing and clarity improvement.',
+            price: 5000
+          },
+          {
+            name: 'Journal Selection Strategy',
+            desc: 'Data-driven journal targeting based on scope, impact factor, indexing, open-access options, and turnaround time.',
+            price: 800
+          },
+          {
+            name: 'Response to Reviewers',
+            desc: 'Expert drafting of point-by-point responses to peer reviewer comments, with corresponding manuscript revisions.',
+            price: 2000
+          },
+          {
+            name: 'Formatting per Journal Guidelines',
+            desc: 'Complete manuscript formatting—structure, references, figures, tables—strictly per the target journal\'s author instructions.',
+            price: 1000
+          },
+          {
+            name: 'Reference Management',
+            desc: 'Organizing, cleaning, and formatting all citations using Mendeley, Zotero, or EndNote in the required citation style.',
+            price: 600
+          },
+          {
+            name: 'Abstract & Cover Letter Drafting',
+            desc: 'Crafting a compelling structured abstract and a persuasive cover letter highlighting the novelty and significance of your work.',
+            price: 800
+          },
+          {
+            name: 'Ethical Compliance Review',
+            desc: 'Review of manuscript for ethical reporting standards including CONSORT, STROBE, PRISMA, and proper ethics statement inclusion.',
+            price: 700
+          },
+          {
+            name: 'Post-publication Support',
+            desc: 'Assistance with post-publication queries, correction notices, or handling editorial follow-up communications.',
+            price: 500
+          },
+          {
+            name: 'Indexing Assistance',
+            desc: 'Guidance on registering your article with indexing databases and DOI services to maximize discoverability and citations.',
+            price: 600
+          }
+        ]
+      }
+    ];
+
+    var selectedItems = [];
+
+    var params = new URLSearchParams(window.location.search);
+    var sIdx = parseInt(params.get('service')) || 0;
+    if (sIdx < 0 || sIdx >= SERVICES.length) sIdx = 0;
+
+    var service = SERVICES[sIdx];
+
+    // Set badge & title
+    document.getElementById('pageTitle').textContent = service.title + ' — Select Services';
+    var badge = document.getElementById('serviceBadge');
+    badge.innerHTML = service.icon + '<span>' + service.title + '</span>';
+    badge.style.background = 'linear-gradient(135deg,' + service.color + '22,' + service.color + '11)';
+    badge.style.color = service.color;
+    badge.style.borderColor = service.color + '44';
+
+    // Build service cards
+    var grid = document.getElementById('serviceGrid');
+    service.items.forEach(function(item, idx) {
+      var card = document.createElement('div');
+      card.className = 'svc-card';
+      card.setAttribute('data-idx', idx);
+      card.innerHTML =
+        '<div class="svc-card-top">' +
+          '<div class="svc-card-check">' +
+            '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>' +
+          '</div>' +
+          '<div class="svc-card-title">' + item.name + '</div>' +
+          '<div class="svc-card-price">BDT ' + item.price.toLocaleString() + '</div>' +
+        '</div>' +
+        '<p class="svc-card-desc">' + item.desc + '</p>';
+
+      card.style.setProperty('--svc-color', service.color);
+
+      card.addEventListener('click', function() {
+        toggleItem(idx, item.name, item.price, card);
+      });
+      grid.appendChild(card);
+    });
+
+    function toggleItem(idx, name, price, el) {
+      var pos = selectedItems.findIndex(function(s) { return s.idx === idx; });
+      if (pos === -1) {
+        selectedItems.push({ idx: idx, name: name, price: price });
+        el.classList.add('selected');
+      } else {
+        selectedItems.splice(pos, 1);
+        el.classList.remove('selected');
+      }
+      updateCounter();
+    }
+
+    function updateCounter() {
+      var n = selectedItems.length;
+      var total = selectedItems.reduce(function(sum, s) { return sum + s.price; }, 0);
+
+      document.getElementById('countLabel').innerHTML =
+        '<strong>' + n + '</strong> service(s) selected';
+      document.getElementById('continueBtn').disabled = n === 0;
+
+      var priceBar = document.getElementById('priceBar');
+      if (n > 0) {
+        priceBar.style.display = 'flex';
+        document.getElementById('totalPrice').textContent = 'BDT ' + total.toLocaleString();
+      } else {
+        priceBar.style.display = 'none';
+      }
+    }
+
+    function goToStep2() {
+      if (selectedItems.length === 0) return;
+      var names = selectedItems.map(function(s) { return encodeURIComponent(s.name); }).join('|');
+      window.location.href = 'step2.html?service=' + sIdx + '&items=' + names;
+    }
+  </script>
+</body>
+</html>

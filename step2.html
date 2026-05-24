@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application Form — ARC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body class="booking-page">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="ARC Logo" />
+        <span>ARC</span>
+      </a>
+      <a href="index.html" class="back-to-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+    </div>
+  </header>
+
+  <main class="booking-main">
+    <div class="booking-container">
+
+      <!-- Progress Bar -->
+      <div class="progress-bar-wrap">
+        <div class="progress-step completed" id="ps1">
+          <div class="progress-dot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <span>Select Service</span>
+        </div>
+        <div class="progress-line completed" id="pline"></div>
+        <div class="progress-step active" id="ps2">
+          <div class="progress-dot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="16" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+          <span>Application Form</span>
+        </div>
+      </div>
+
+      <!-- Form Card -->
+      <div class="booking-card" id="formCard">
+        <div class="booking-card-header">
+          <h1 class="booking-title">Enter Your Information</h1>
+          <p class="booking-subtitle">All fields marked with (*) are required. Complete the form and submit.</p>
+        </div>
+
+        <!-- Selected Services Summary -->
+        <div class="selected-summary" id="selectedSummary">
+          <div class="summary-heading">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Selected Services
+          </div>
+          <div class="summary-tags" id="summaryTags"></div>
+        </div>
+
+        <!-- Form -->
+        <div class="form-body">
+          <div class="form-group">
+            <label class="form-label" for="fName">Full Name <span class="req">*</span></label>
+            <input type="text" id="fName" class="form-input" placeholder="Enter your full name" />
+            <span class="form-error" id="errName"></span>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="fMobile">Mobile Number <span class="req">*</span></label>
+              <input type="tel" id="fMobile" class="form-input" placeholder="01XXXXXXXXX" maxlength="11" />
+              <span class="form-error" id="errMobile"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fEmail">Email Address <span class="req">*</span></label>
+              <input type="email" id="fEmail" class="form-input" placeholder="example@email.com" />
+              <span class="form-error" id="errEmail"></span>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="fInstitute">Institute <span class="req">*</span></label>
+              <input type="text" id="fInstitute" class="form-input" placeholder="Name of your institution" />
+              <span class="form-error" id="errInstitute"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fDepartment">Department <span class="req">*</span></label>
+              <input type="text" id="fDepartment" class="form-input" placeholder="Name of your department" />
+              <span class="form-error" id="errDepartment"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fCourse">Course <span class="req">*</span></label>
+            <input type="text" id="fCourse" class="form-input" placeholder="Course name / degree program" />
+            <span class="form-error" id="errCourse"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fDocuments">Documents You Have Provided <span class="req">*</span></label>
+            <textarea id="fDocuments" class="form-textarea" rows="3" placeholder="List the documents you have (e.g. previous reports, datasets, articles, etc.)"></textarea>
+            <span class="form-error" id="errDocuments"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fNeed">Specific Need / Expectation <span class="req">*</span></label>
+            <textarea id="fNeed" class="form-textarea" rows="4" placeholder="Describe your specific requirements or expectations in detail"></textarea>
+            <span class="form-error" id="errNeed"></span>
+          </div>
+        </div>
+
+        <div class="booking-actions">
+          <button class="btn-back" onclick="history.back()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Go Back
+          </button>
+          <button class="btn-submit" onclick="submitForm()">
+            Submit Application
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Success Card (hidden initially) -->
+      <div class="booking-card success-card" id="successCard" style="display:none;">
+        <div class="success-body">
+          <div class="success-icon-wrap">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h2 class="success-title">Application Submitted!</h2>
+          <p class="success-msg">Your application has been submitted successfully. The ARC team will get in touch with you shortly.</p>
+          <div class="success-info" id="successInfo"></div>
+          <a href="index.html" class="btn-continue" style="display:inline-flex; text-decoration:none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Return to Homepage
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Read URL params
+    var params = new URLSearchParams(window.location.search);
+    var sIdx = parseInt(params.get('service')) || 0;
+    var itemsRaw = params.get('items') || '';
+    var selectedNames = itemsRaw ? itemsRaw.split('|').map(decodeURIComponent) : [];
+
+    var SERVICE_TITLES = [
+      'Consultation', 'Protocol', 'Thesis & Dissertation',
+      'Data Analysis', 'Journal Article & Publication'
+    ];
+    var serviceTitle = SERVICE_TITLES[sIdx] || 'Service';
+
+    // Build summary tags
+    var tagsContainer = document.getElementById('summaryTags');
+    if (selectedNames.length > 0) {
+      selectedNames.forEach(function(name) {
+        var tag = document.createElement('span');
+        tag.className = 'stag';
+        tag.innerHTML =
+          '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> ' + name;
+        tagsContainer.appendChild(tag);
+      });
+    } else {
+      var tag = document.createElement('span');
+      tag.className = 'stag';
+      tag.textContent = serviceTitle;
+      tagsContainer.appendChild(tag);
+    }
+
+    // Form validation & submit
+    function submitForm() {
+      var fields = [
+        { id: 'fName',       err: 'errName',       label: 'Full Name',      min: 2 },
+        { id: 'fMobile',     err: 'errMobile',     label: 'Mobile Number',  min: 11, pattern: /^01[0-9]{9}$/ },
+        { id: 'fEmail',      err: 'errEmail',      label: 'Email Address',  min: 5,  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+        { id: 'fInstitute',  err: 'errInstitute',  label: 'Institute',      min: 2 },
+        { id: 'fDepartment', err: 'errDepartment', label: 'Department',     min: 2 },
+        { id: 'fCourse',     err: 'errCourse',     label: 'Course',         min: 2 },
+        { id: 'fDocuments',  err: 'errDocuments',  label: 'Documents',      min: 3 },
+        { id: 'fNeed',       err: 'errNeed',       label: 'Specific Need',  min: 5 }
+      ];
+
+      var valid = true;
+      var firstErrorEl = null;
+
+      fields.forEach(function(f) {
+        var el = document.getElementById(f.id);
+        var errEl = document.getElementById(f.err);
+        var val = el.value.trim();
+        el.classList.remove('error');
+        errEl.textContent = '';
+
+        if (!val || val.length < f.min) {
+          el.classList.add('error');
+          errEl.textContent = f.label + ' is required.';
+          valid = false;
+          if (!firstErrorEl) firstErrorEl = el;
+        } else if (f.pattern && !f.pattern.test(val)) {
+          el.classList.add('error');
+          if (f.id === 'fMobile') errEl.textContent = 'Enter a valid mobile number (01XXXXXXXXX).';
+          else if (f.id === 'fEmail') errEl.textContent = 'Enter a valid email address.';
+          valid = false;
+          if (!firstErrorEl) firstErrorEl = el;
+        }
+      });
+
+      if (!valid) {
+        if (firstErrorEl) firstErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Build success info
+      var infoHtml =
+        '<div class="sinfo-row"><span class="sinfo-label">Name:</span><span>' + document.getElementById('fName').value.trim() + '</span></div>' +
+        '<div class="sinfo-row"><span class="sinfo-label">Mobile:</span><span>' + document.getElementById('fMobile').value.trim() + '</span></div>' +
+        '<div class="sinfo-row"><span class="sinfo-label">Email:</span><span>' + document.getElementById('fEmail').value.trim() + '</span></div>' +
+        '<div class="sinfo-row"><span class="sinfo-label">Service:</span><span>' + serviceTitle + '</span></div>';
+      document.getElementById('successInfo').innerHTML = infoHtml;
+
+      // Show success
+      document.getElementById('formCard').style.display = 'none';
+      document.getElementById('successCard').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
