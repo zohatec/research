@@ -2,31 +2,35 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ── Sticky Header Shadow ──
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+  var header = document.getElementById('header');
+  if (header) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
 
   // ── Mobile Menu Toggle ──
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
+  var menuToggle = document.getElementById('menuToggle');
+  var mobileNav = document.getElementById('mobileNav');
 
-  menuToggle.addEventListener('click', function () {
-    menuToggle.classList.toggle('active');
-    mobileNav.classList.toggle('open');
-  });
-
-  // Close mobile menu when a link is clicked
-  mobileNav.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      menuToggle.classList.remove('active');
-      mobileNav.classList.remove('open');
+  if (menuToggle && mobileNav) {
+    menuToggle.addEventListener('click', function () {
+      menuToggle.classList.toggle('active');
+      mobileNav.classList.toggle('open');
     });
-  });
+
+    // Close mobile menu when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menuToggle.classList.remove('active');
+        mobileNav.classList.remove('open');
+      });
+    });
+  }
 
   // ── Smooth Scroll for Anchor Links ──
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -36,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        var headerHeight = header.offsetHeight;
+        var headerHeight = header ? header.offsetHeight : 0;
         var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
         window.scrollTo({
           top: targetPosition,
@@ -48,60 +52,67 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── Gallery Carousel ──
   var currentSlide = 0;
-  var totalSlides = document.querySelectorAll('.gallery-slide').length;
+  var gallerySlides = document.querySelectorAll('.gallery-slide');
+  var totalSlides = gallerySlides.length;
   var track = document.getElementById('galleryTrack');
   var dotsContainer = document.getElementById('galleryDots');
 
-  // Create dots
-  for (var i = 0; i < totalSlides; i++) {
-    var dot = document.createElement('button');
-    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-    dot.setAttribute('data-index', i);
-    dot.addEventListener('click', function () {
-      goToSlide(parseInt(this.getAttribute('data-index')));
-    });
-    dotsContainer.appendChild(dot);
-  }
+  if (track && totalSlides > 0) {
+    // Create dots
+    for (var i = 0; i < totalSlides; i++) {
+      var dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.setAttribute('data-index', i);
+      dot.addEventListener('click', function () {
+        goToSlide(parseInt(this.getAttribute('data-index')));
+      });
+      dotsContainer.appendChild(dot);
+    }
 
-  function goToSlide(index) {
-    currentSlide = index;
-    if (currentSlide < 0) currentSlide = totalSlides - 1;
-    if (currentSlide >= totalSlides) currentSlide = 0;
-    track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-    updateDots();
-  }
+    function goToSlide(index) {
+      currentSlide = index;
+      if (currentSlide < 0) currentSlide = totalSlides - 1;
+      if (currentSlide >= totalSlides) currentSlide = 0;
+      track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+      updateDots();
+    }
 
-  function updateDots() {
-    dotsContainer.querySelectorAll('.gallery-dot').forEach(function (dot, idx) {
-      dot.classList.toggle('active', idx === currentSlide);
-    });
-  }
+    function updateDots() {
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll('.gallery-dot').forEach(function (dot, idx) {
+          dot.classList.toggle('active', idx === currentSlide);
+        });
+      }
+    }
 
-  // Auto-slide every 2 seconds
-  var autoSlide = setInterval(function () {
-    goToSlide(currentSlide + 1);
-  }, 2000);
-
-  // Pause on hover
-  var carousel = document.querySelector('.gallery-carousel');
-  carousel.addEventListener('mouseenter', function () {
-    clearInterval(autoSlide);
-  });
-  carousel.addEventListener('mouseleave', function () {
-    autoSlide = setInterval(function () {
+    // Auto-slide every 2 seconds
+    var autoSlide = setInterval(function () {
       goToSlide(currentSlide + 1);
     }, 2000);
-  });
 
-  // Expose gallerySlide globally for button onclick
-  window.gallerySlide = function (direction) {
-    goToSlide(currentSlide + direction);
-  };
+    // Pause on hover
+    var carousel = document.querySelector('.gallery-carousel');
+    if (carousel) {
+      carousel.addEventListener('mouseenter', function () {
+        clearInterval(autoSlide);
+      });
+      carousel.addEventListener('mouseleave', function () {
+        autoSlide = setInterval(function () {
+          goToSlide(currentSlide + 1);
+        }, 2000);
+      });
+    }
+
+    // Expose gallerySlide globally for button onclick
+    window.gallerySlide = function (direction) {
+      goToSlide(currentSlide + direction);
+    };
+  }
 
   // ── Scroll Animations (Intersection Observer) ──
   var fadeElements = document.querySelectorAll(
-    '.consultancy-card, .course-card, .resource-card, .team-card, .blog-card, .specialty-tag'
+    '.consultancy-card, .course-card, .resource-card, .team-card, .blog-card, .specialty-tag, .donate-card, .bank-card, .impact-card, .faq-item'
   );
 
   fadeElements.forEach(function (el) {
@@ -126,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── Active Nav Link Highlighting ──
   var sections = document.querySelectorAll('section[id]');
-  var navLinks = document.querySelectorAll('#desktopNav a, #mobileNav a:not(.btn-join-mobile)');
+  var navLinks = document.querySelectorAll('#desktopNav a:not(.nav-donate-link), #mobileNav a:not(.nav-donate-link):not(.btn-join-mobile)');
 
   window.addEventListener('scroll', function () {
     var scrollY = window.pageYOffset;
@@ -146,25 +157,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── Notification Toast (Example) ──
-  // Show a welcome notification after 2 seconds
-  setTimeout(function () {
-    var notification = document.createElement('div');
-    notification.className = 'notification-toast';
-    notification.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Welcome to ARC! Explore our latest courses.';
-    document.body.appendChild(notification);
+  // ── FAQ Accordion ──
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    var question = item.querySelector('.faq-question');
+    if (question) {
+      question.addEventListener('click', function () {
+        var isActive = item.classList.contains('active');
+        // Close all FAQs
+        faqItems.forEach(function (otherItem) {
+          otherItem.classList.remove('active');
+          var otherBtn = otherItem.querySelector('.faq-question');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        });
+        // Toggle current
+        if (!isActive) {
+          item.classList.add('active');
+          question.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+  });
 
+  // ── Notification Toast (only on index page) ──
+  if (document.getElementById('hero')) {
     setTimeout(function () {
-      notification.classList.add('show');
-    }, 50);
+      var notification = document.createElement('div');
+      notification.className = 'notification-toast';
+      notification.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Welcome to ARC! Explore our latest courses.';
+      document.body.appendChild(notification);
 
-    setTimeout(function () {
-      notification.classList.remove('show');
       setTimeout(function () {
-        notification.remove();
-      }, 300);
-    }, 5000);
-  }, 2000);
+        notification.classList.add('show');
+      }, 50);
+
+      setTimeout(function () {
+        notification.classList.remove('show');
+        setTimeout(function () {
+          notification.remove();
+        }, 300);
+      }, 5000);
+    }, 2000);
+  }
 
 });
 
@@ -195,11 +229,6 @@ document.addEventListener('DOMContentLoaded', function () {
     '}' +
     '.notification-toast.show {' +
       'transform: translateX(0);' +
-    '}' +
-    '.active-nav {' +
-      'color: orange !important;' +
-      'background: #f0fdfa;' +
-      'border-radius: 6px;' +
     '}';
   document.head.appendChild(style);
 })();
