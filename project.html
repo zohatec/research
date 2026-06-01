@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARC Projects – Ongoing & Completed Research</title>
+  <meta name="description" content="Explore research projects supported by ARC – from clinical trials to public health studies. See our impact in action." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-hero {
+      background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+      padding: 3rem 1rem;
+      text-align: center;
+      color: white;
+    }
+    .project-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.6s ease-out;
+    }
+    .project-hero p {
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 0.6s ease-out 0.1s both;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .project-card {
+      background: white;
+      border: 2px solid #ccfbf1;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: #2dd4bf;
+      box-shadow: 0 12px 24px rgba(13,148,136,0.12);
+      transform: translateY(-4px);
+    }
+    .project-img {
+      height: 220px;
+      background: linear-gradient(135deg, #ccfbf1, #f0fdfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #0f766e;
+    }
+    .project-content { padding: 1.5rem; }
+    .project-status {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .status-ongoing { background: #fef3c7; color: #b45309; }
+    .status-completed { background: #dcfce7; color: #15803d; }
+    .project-title { font-size: 1.25rem; font-weight: 700; color: #134e4a; margin-bottom: 0.5rem; }
+    .project-desc { color: #6b7280; line-height: 1.6; margin-bottom: 1rem; }
+    .project-meta { display: flex; gap: 1rem; font-size: 0.8125rem; color: #9ca3af; margin-top: 0.5rem; }
+    @media (min-width: 768px) {
+      .project-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-hero h1 { font-size: 3rem; }
+    }
+    @media (min-width: 1024px) {
+      .project-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><img src="logo.png" alt="ARC Logo" /><span>ARC</span></a>
+      <nav id="desktopNav">
+        <a href="index.html#consultancy">Consultancy</a>
+        <a href="index.html#courses">Skill Development</a>
+        <a href="elibrary.html">E-Library</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About us</a>
+        <a href="project.html" class="active-nav">Project</a>
+        <a href="donate.html" class="nav-donate-link">Donate</a>
+      </nav>
+      <a href="step2.html" class="btn-join">Join Us</a>
+      <button id="menuToggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
+    </div>
+    <nav id="mobileNav">
+      <a href="index.html#consultancy">Consultancy</a>
+      <a href="index.html#courses">Skill Development</a>
+      <a href="elibrary.html">E-Library</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About us</a>
+      <a href="project.html" class="active-nav">Project</a>
+      <a href="donate.html" class="nav-donate-link">Donate</a>
+      <a href="step2.html" class="btn-join-mobile">Join Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <h1>Our Research Projects</h1>
+        <p>Collaborative initiatives that drive evidence‑based change</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="project-grid">
+        <div class="project-card fade-in"><div class="project-img">📋</div><div class="project-content"><span class="project-status status-ongoing">Ongoing</span><h3 class="project-title">Strengthening Institutional Review Board (IRB) Capacity in Rajshahi</h3><p class="project-desc">A collaborative project with the University of Rajshahi to train IRB members, streamline ethics application processes, and develop standard operating procedures for human subject research.</p><div class="project-meta"><span>📅 Started: Jan 2026</span><span>👥 Partners: RU, BMRC</span></div></div></div>
+        <div class="project-card fade-in"><div class="project-img">🩺</div><div class="project-content"><span class="project-status status-ongoing">Ongoing</span><h3 class="project-title">Prevalence of Hypertension & Diabetes Among Rural Adults</h3><p class="project-desc">A community‑based cross‑sectional study covering five villages in Rajshahi district. Data collection includes anthropometric measurements, blood pressure, and random glucose screening.</p><div class="project-meta"><span>📅 Started: Mar 2026</span><span>👥 Partners: Community Clinics</span></div></div></div>
+        <div class="project-card fade-in"><div class="project-img">📊</div><div class="project-content"><span class="project-status status-completed">Completed</span><h3 class="project-title">Systematic Review on Mobile Health Interventions for Diabetes Self‑Management</h3><p class="project-desc">A meta‑analysis of 28 randomised controlled trials evaluating the effectiveness of SMS‑based and app‑based interventions. Findings published in the Journal of Medical Internet Research.</p><div class="project-meta"><span>📅 Completed: Dec 2025</span><span>📄 Publication: JMIR 2026</span></div></div></div>
+        <div class="project-card fade-in"><div class="project-img">📚</div><div class="project-content"><span class="project-status status-completed">Completed</span><h3 class="project-title">Developing a Bangla Research Ethics Training Module</h3><p class="project-desc">In collaboration with the Bangladesh Bioethics Society, we created a free, open‑access training module on research ethics for medical students and early‑career researchers.</p><div class="project-meta"><span>📅 Completed: Aug 2025</span><span>🌐 Available: ARC E‑Library</span></div></div></div>
+        <div class="project-card fade-in"><div class="project-img">📈</div><div class="project-content"><span class="project-status status-ongoing">Ongoing</span><h3 class="project-title">Predictors of Publication Success Among Bangladeshi Medical Students</h3><p class="project-desc">A mixed‑methods study exploring barriers and facilitators to publishing research. Survey of 500+ students with in‑depth interviews of successful early‑career authors.</p><div class="project-meta"><span>📅 Started: Feb 2026</span><span>📊 Expected completion: Dec 2026</span></div></div></div>
+        <div class="project-card fade-in"><div class="project-img">💻</div><div class="project-content"><span class="project-status status-completed">Completed</span><h3 class="project-title">ARC Online SPSS Workshop Series</h3><p class="project-desc">A series of 10 live online workshops reaching 1,200+ participants from 30+ institutions. Recordings and materials are now available for free on our YouTube channel.</p><div class="project-meta"><span>📅 Completed: Jan 2026</span><span>🎥 10+ hours of content</span></div></div></div>
+      </div>
+
+      <div class="fade-in" style="background: #f0fdfa; border-radius: 16px; padding: 2rem; text-align: center; margin: 2rem 0;">
+        <h3 style="color:#134e4a;">Interested in collaborating?</h3>
+        <p style="color:#6b7280; margin-bottom: 1rem;">ARC welcomes partnerships for research projects, capacity‑building initiatives, and joint grant applications.</p>
+        <a href="step2.html" class="btn-primary">Contact Us →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo"><img src="logo.png" alt="ARC" /><span>ARC</span></div><div class="footer-address"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><p>Rabindra Bhaban, Department of Law, RU, Rajshahi-6205</p></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#consultancy">Consultancy</a></li><li><a href="elibrary.html">E-Library</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About us</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms & Conditions</a></li></ul></div>
+        <div class="footer-col"><h4>Contact Us</h4><ul class="contact-list"><li><a href="tel:01712534626"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 01712534626</a></li><li><a href="mailto:arc19@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> arc19@gmail.com</a></li><li><a href="#" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook Page</a></li></ul></div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom"><p>&copy; 2026 ARC. All rights reserved.</p><p>Developed by <a href="#">CubeTech IT</a></p></div>
+    </div>
+  </footer>
+
+  <a href="tel:01712534626" class="helpline-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Helpline: 01712534626</a>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var fadeElements = document.querySelectorAll('.fade-in');
+      if (fadeElements.length && window.IntersectionObserver) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        fadeElements.forEach(function(el) { observer.observe(el); });
+      } else {
+        fadeElements.forEach(function(el) { el.classList.add('visible'); });
+      }
+    });
+  </script>
+</body>
+</html>

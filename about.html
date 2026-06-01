@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About ARC – Mission, Team & History</title>
+  <meta name="description" content="Learn about ARC’s mission to guide research and build expertise. Meet our team, see our achievements, and discover our values." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-hero {
+      background: linear-gradient(135deg, #134e4a 0%, #0f766e 60%, #14b8a6 100%);
+      padding: 3rem 1rem;
+      text-align: center;
+      color: white;
+    }
+    .about-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.6s ease-out;
+    }
+    .about-hero p {
+      font-size: 1.125rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ccfbf1;
+      animation: fadeInUp 0.6s ease-out 0.1s both;
+    }
+    .mission-vision {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .mv-card {
+      background: white;
+      border: 2px solid #ccfbf1;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .mv-card:hover { border-color: #2dd4bf; transform: translateY(-4px); }
+    .mv-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .mv-card h3 { font-size: 1.5rem; color: #134e4a; margin-bottom: 0.5rem; }
+    .mv-card p { color: #6b7280; line-height: 1.7; }
+    .about-stats-large {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .stat-card {
+      background: #f0fdfa;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-number { font-size: 2rem; font-weight: 800; color: #0f766e; }
+    .stat-label { font-size: 0.875rem; color: #6b7280; font-weight: 500; }
+    .team-section { margin: 3rem 0; }
+    @media (min-width: 768px) {
+      .mission-vision { grid-template-columns: repeat(2, 1fr); }
+      .about-stats-large { grid-template-columns: repeat(4, 1fr); }
+      .about-hero h1 { font-size: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><img src="logo.png" alt="ARC Logo" /><span>ARC</span></a>
+      <nav id="desktopNav">
+        <a href="index.html#consultancy">Consultancy</a>
+        <a href="index.html#courses">Skill Development</a>
+        <a href="elibrary.html">E-Library</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html" class="active-nav">About us</a>
+        <a href="project.html">Project</a>
+        <a href="donate.html" class="nav-donate-link">Donate</a>
+      </nav>
+      <a href="step2.html" class="btn-join">Join Us</a>
+      <button id="menuToggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
+    </div>
+    <nav id="mobileNav">
+      <a href="index.html#consultancy">Consultancy</a>
+      <a href="index.html#courses">Skill Development</a>
+      <a href="elibrary.html">E-Library</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html" class="active-nav">About us</a>
+      <a href="project.html">Project</a>
+      <a href="donate.html" class="nav-donate-link">Donate</a>
+      <a href="step2.html" class="btn-join-mobile">Join Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <h1>About ARC</h1>
+        <p>Guiding Research, Building Expertise – since 2019</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="mission-vision">
+        <div class="mv-card fade-in"><div class="mv-icon">🎯</div><h3>Our Mission</h3><p>To empower researchers, students, and health professionals with practical skills, ethical guidance, and expert support – from protocol writing to publication.</p></div>
+        <div class="mv-card fade-in"><div class="mv-icon">🌟</div><h3>Our Vision</h3><p>A thriving research ecosystem in Bangladesh where every researcher has access to quality mentorship, training, and resources to produce impactful, evidence‑based work.</p></div>
+      </div>
+
+      <div class="fade-in" style="margin: 2rem 0;">
+        <h2 class="section-title-bg">Our Story</h2>
+        <p style="margin-top: 1rem; color: #374151; line-height: 1.8;">ARC began as a small initiative by a group of passionate researchers at the University of Rajshahi. Recognising the gap between academic knowledge and practical research execution, we started offering informal workshops on research methodology. Over the years, with the support of experienced faculty members and healthcare professionals, ARC has grown into a trusted organisation that has trained over 500 researchers, supported more than 200 publications, and provided consultancy to hundreds of postgraduate students and clinicians. Today, we continue to expand our reach through online courses, free resources, and one‑on‑one mentorship.</p>
+      </div>
+
+      <div class="about-stats-large">
+        <div class="stat-card fade-in"><div class="stat-number">500+</div><div class="stat-label">Researchers Trained</div></div>
+        <div class="stat-card fade-in"><div class="stat-number">200+</div><div class="stat-label">Publications Supported</div></div>
+        <div class="stat-card fade-in"><div class="stat-number">50+</div><div class="stat-label">Free Workshops</div></div>
+        <div class="stat-card fade-in"><div class="stat-number">20+</div><div class="stat-label">Expert Mentors</div></div>
+      </div>
+
+      <h2 class="section-title-bg">Our Core Values</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; margin: 2rem 0;">
+        <div class="fade-in" style="background:#f0fdfa; padding:1rem; border-radius:8px; text-align:center;"><strong>🔬 Integrity</strong><br>Honest, ethical research</div>
+        <div class="fade-in" style="background:#f0fdfa; padding:1rem; border-radius:8px; text-align:center;"><strong>🤝 Collaboration</strong><br>Together we grow</div>
+        <div class="fade-in" style="background:#f0fdfa; padding:1rem; border-radius:8px; text-align:center;"><strong>📚 Excellence</strong><br>High‑quality guidance</div>
+        <div class="fade-in" style="background:#f0fdfa; padding:1rem; border-radius:8px; text-align:center;"><strong>🌱 Empowerment</strong><br>Building confidence</div>
+      </div>
+
+      <div class="team-section">
+        <h2 class="section-title-bg">Meet Our Core Team</h2>
+        <div class="team-grid" style="margin-top:1.5rem;">
+          <div class="team-card fade-in"><div class="team-avatar">MH</div><h4>Prof. Dr. Md. Mahmudul Haque</h4><p>Public Health Expert</p></div>
+          <div class="team-card fade-in"><div class="team-avatar">MR</div><h4>Prof. Dr. Md. Maruf-Ur-Rahman</h4><p>Biochemistry & Editor</p></div>
+          <div class="team-card fade-in"><div class="team-avatar">AS</div><h4>Prof. Dr. Md. Abdus Shakoor</h4><p>Physical Medicine & Bioethics</p></div>
+          <div class="team-card fade-in"><div class="team-avatar">KA</div><h4>Prof. Dr. Khursheda Akhtar</h4><p>Public Health & Hospital Admin</p></div>
+          <div class="team-card fade-in"><div class="team-avatar">FF</div><h4>FABLIHA FYROSE</h4><p>Doctor</p></div>
+          <div class="team-card fade-in"><div class="team-avatar">SNA</div><h4>Syeda Nafisa Ahsan</h4><p>Doctor</p></div>
+        </div>
+      </div>
+
+      <div class="fade-in" style="background: #f0fdfa; border-radius: 16px; padding: 2rem; margin: 2rem 0; text-align: center;">
+        <h3 style="color:#134e4a;">Recognised & Trusted</h3>
+        <p style="color:#6b7280;">ARC is a registered research organisation in Bangladesh. Our training programmes are aligned with international research standards, and we work closely with ethics committees, universities, and healthcare institutions across the country.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo"><img src="logo.png" alt="ARC" /><span>ARC</span></div><div class="footer-address"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><p>Rabindra Bhaban, Department of Law, RU, Rajshahi-6205</p></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#consultancy">Consultancy</a></li><li><a href="elibrary.html">E-Library</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About us</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms & Conditions</a></li></ul></div>
+        <div class="footer-col"><h4>Contact Us</h4><ul class="contact-list"><li><a href="tel:01712534626"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 01712534626</a></li><li><a href="mailto:arc19@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> arc19@gmail.com</a></li><li><a href="#" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook Page</a></li></ul></div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom"><p>&copy; 2026 ARC. All rights reserved.</p><p>Developed by <a href="#">CubeTech IT</a></p></div>
+    </div>
+  </footer>
+
+  <a href="tel:01712534626" class="helpline-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Helpline: 01712534626</a>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var fadeElements = document.querySelectorAll('.fade-in');
+      if (fadeElements.length && window.IntersectionObserver) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        fadeElements.forEach(function(el) { observer.observe(el); });
+      } else {
+        fadeElements.forEach(function(el) { el.classList.add('visible'); });
+      }
+    });
+  </script>
+</body>
+</html>

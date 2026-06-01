@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARC Blog – Research Insights & Updates</title>
+  <meta name="description" content="Read the latest articles, research tips, methodology guides, and news from ARC – Guiding Research, Building Expertise." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .blog-hero {
+      background: linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #14b8a6 100%);
+      padding: 3rem 1rem;
+      text-align: center;
+      color: white;
+    }
+    .blog-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.6s ease-out;
+    }
+    .blog-hero p {
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #ccfbf1;
+      animation: fadeInUp 0.6s ease-out 0.1s both;
+    }
+    .blog-grid-full {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+    }
+    .blog-card-large {
+      background: white;
+      border: 2px solid #ccfbf1;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card-large:hover {
+      border-color: #2dd4bf;
+      box-shadow: 0 8px 20px rgba(13,148,136,0.12);
+      transform: translateY(-4px);
+    }
+    .blog-card-img {
+      height: 200px;
+      background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #0f766e;
+    }
+    .blog-card-body {
+      padding: 1.5rem;
+    }
+    .blog-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.8125rem;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
+    .blog-card-body h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #134e4a;
+      margin-bottom: 0.75rem;
+    }
+    .blog-card-body p {
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .blog-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-weight: 600;
+      color: #0f766e;
+      transition: gap 0.2s;
+    }
+    .blog-read-more:hover {
+      gap: 0.5rem;
+      color: #14b8a6;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 2rem 0;
+    }
+    .pagination a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 36px;
+      height: 36px;
+      padding: 0 0.5rem;
+      border: 2px solid #ccfbf1;
+      border-radius: 6px;
+      color: #134e4a;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .pagination a.active,
+    .pagination a:hover {
+      background: #0f766e;
+      border-color: #0f766e;
+      color: white;
+    }
+    @media (min-width: 768px) {
+      .blog-grid-full { grid-template-columns: repeat(2, 1fr); }
+      .blog-hero h1 { font-size: 3rem; }
+    }
+    @media (min-width: 1024px) {
+      .blog-grid-full { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="ARC Logo" />
+        <span>ARC</span>
+      </a>
+      <nav id="desktopNav">
+        <a href="index.html#consultancy">Consultancy</a>
+        <a href="index.html#courses">Skill Development</a>
+        <a href="elibrary.html">E-Library</a>
+        <a href="blog.html" class="active-nav">Blog</a>
+        <a href="about.html">About us</a>
+        <a href="project.html">Project</a>
+        <a href="donate.html" class="nav-donate-link">Donate</a>
+      </nav>
+      <a href="step2.html" class="btn-join">Join Us</a>
+      <button id="menuToggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+
+    <nav id="mobileNav">
+      <a href="index.html#consultancy">Consultancy</a>
+      <a href="index.html#courses">Skill Development</a>
+      <a href="elibrary.html">E-Library</a>
+      <a href="blog.html" class="active-nav">Blog</a>
+      <a href="about.html">About us</a>
+      <a href="project.html">Project</a>
+      <a href="donate.html" class="nav-donate-link">Donate</a>
+      <a href="step2.html" class="btn-join-mobile">Join Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="blog-hero">
+      <div class="container">
+        <h1>ARC Blog</h1>
+        <p>Insights, tutorials, and updates to empower your research journey.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="blog-grid-full">
+        <article class="blog-card-large fade-in">
+          <div class="blog-card-img">📊</div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>📅 May 20, 2026</span><span>✍️ Dr. Mahmudul Haque</span></div>
+            <h3>How to Choose the Right Statistical Test for Your Data</h3>
+            <p>Selecting an appropriate statistical test is crucial for valid results. This guide walks you through parametric vs non‑parametric tests, assumptions, and practical examples.</p>
+            <a href="#" class="blog-read-more">Read more →</a>
+          </div>
+        </article>
+        <article class="blog-card-large fade-in">
+          <div class="blog-card-img">📝</div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>📅 May 15, 2026</span><span>✍️ Prof. Maruf-Ur-Rahman</span></div>
+            <h3>Structuring Your Research Protocol for Ethics Approval</h3>
+            <p>A well‑prepared protocol is the key to fast ethics clearance. Learn the essential sections – from background to data management – that every IRB looks for.</p>
+            <a href="#" class="blog-read-more">Read more →</a>
+          </div>
+        </article>
+        <article class="blog-card-large fade-in">
+          <div class="blog-card-img">🔍</div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>📅 May 10, 2026</span><span>✍️ Dr. Khursheda Akhtar</span></div>
+            <h3>Systematic Review vs. Literature Review: Key Differences</h3>
+            <p>Understand when to conduct a systematic review and when a traditional narrative review is sufficient. Includes PRISMA guidelines and search strategies.</p>
+            <a href="#" class="blog-read-more">Read more →</a>
+          </div>
+        </article>
+        <article class="blog-card-large fade-in">
+          <div class="blog-card-img">💻</div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>📅 May 5, 2026</span><span>✍️ Dr. Mohammad Ali</span></div>
+            <h3>SPSS for Beginners: Data Entry to Basic Analysis</h3>
+            <p>A step‑by‑step tutorial for researchers new to SPSS – creating variables, entering data, running descriptive statistics, and generating charts.</p>
+            <a href="#" class="blog-read-more">Read more →</a>
+          </div>
+        </article>
+        <article class="blog-card-large fade-in">
+          <div class="blog-card-img">✍️</div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>📅 April 28, 2026</span><span>✍️ Dr. Fatema Begum</span></div>
+            <h3>Writing a Convincing Discussion Section</h3>
+            <p>The discussion is where you interpret your findings. Learn how to avoid common pitfalls, contextualise results, and highlight the importance of your study.</p>
+            <a href="#" class="blog-read-more">Read more →</a>
+          </div>
+        </article>
+        <article class="blog-card-large fade-in">
+          <div class="blog-card-img">📈</div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>📅 April 22, 2026</span><span>✍️ Dr. Nazmun Nahar</span></div>
+            <h3>Sample Size Calculation in Clinical Research</h3>
+            <p>Why sample size matters, how to use OpenEpi and G*Power, and how to write the sample size justification for your protocol.</p>
+            <a href="#" class="blog-read-more">Read more →</a>
+          </div>
+        </article>
+      </div>
+      <div class="pagination">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">→</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo"><img src="logo.png" alt="ARC" /><span>ARC</span></div><div class="footer-address"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><p>Rabindra Bhaban, Department of Law, RU, Rajshahi-6205</p></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#consultancy">Consultancy</a></li><li><a href="elibrary.html">E-Library</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About us</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms & Conditions</a></li></ul></div>
+        <div class="footer-col"><h4>Contact Us</h4><ul class="contact-list"><li><a href="tel:01712534626"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 01712534626</a></li><li><a href="mailto:arc19@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> arc19@gmail.com</a></li><li><a href="#" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook Page</a></li></ul></div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom"><p>&copy; 2026 ARC. All rights reserved.</p><p>Developed by <a href="#">CubeTech IT</a></p></div>
+    </div>
+  </footer>
+
+  <a href="tel:01712534626" class="helpline-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Helpline: 01712534626</a>
+
+  <script src="script.js"></script>
+  <!-- অতিরিক্ত স্ক্রিপ্ট: সব .fade-in এলিমেন্টের জন্য Observer চালু করে -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var fadeElements = document.querySelectorAll('.fade-in');
+      if (fadeElements.length && window.IntersectionObserver) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        fadeElements.forEach(function(el) {
+          observer.observe(el);
+        });
+      } else {
+        // fallback: immediately show all
+        fadeElements.forEach(function(el) { el.classList.add('visible'); });
+      }
+    });
+  </script>
+</body>
+</html>
