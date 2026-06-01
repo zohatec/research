@@ -17,7 +17,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .elibrary-hero h1 {
       font-size: 2.5rem;
       font-weight: 800;
@@ -25,14 +24,12 @@
       margin-bottom: 0.5rem;
       animation: fadeInUp 0.6s ease-out;
     }
-
     .elibrary-hero p {
       font-size: 1.125rem;
       color: #ccfbf1;
       max-width: 500px;
       animation: fadeInUp 0.6s ease-out 0.2s both;
     }
-
     .search-container {
       display: flex;
       flex-direction: column;
@@ -40,13 +37,11 @@
       margin-top: 2rem;
       animation: fadeInUp 0.6s ease-out 0.3s both;
     }
-
     .search-bar {
       display: flex;
       gap: 0.5rem;
       flex-wrap: wrap;
     }
-
     .search-bar input {
       flex: 1;
       min-width: 200px;
@@ -56,7 +51,6 @@
       font-size: 0.9375rem;
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-
     .search-bar button {
       padding: 0.75rem 1.5rem;
       background: #ffffff;
@@ -67,18 +61,15 @@
       cursor: pointer;
       transition: all 0.3s;
     }
-
     .search-bar button:hover {
       background: #f0fdfa;
       transform: translateY(-2px);
     }
-
     .filter-chips {
       display: flex;
       gap: 0.5rem;
       flex-wrap: wrap;
     }
-
     .filter-chip {
       padding: 0.5rem 1rem;
       background: rgba(255,255,255,0.2);
@@ -90,18 +81,15 @@
       cursor: pointer;
       transition: all 0.3s;
     }
-
     .filter-chip:hover,
     .filter-chip.active {
       background: rgba(255,255,255,0.9);
       color: #134e4a;
       border-color: #ffffff;
     }
-
     #elibrary {
       padding: 4rem 0;
     }
-
     .resource-header {
       display: flex;
       align-items: center;
@@ -110,12 +98,10 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-
     .resource-count {
       font-size: 0.9375rem;
       color: #6b7280;
     }
-
     .view-toggle {
       display: flex;
       gap: 0.5rem;
@@ -123,7 +109,6 @@
       padding: 0.25rem;
       border-radius: 6px;
     }
-
     .view-toggle button {
       padding: 0.5rem 0.875rem;
       background: transparent;
@@ -133,23 +118,19 @@
       color: #9ca3af;
       transition: all 0.3s;
     }
-
     .view-toggle button.active {
       background: #fff;
       color: #0f766e;
       box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
-
     .resources-container {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.25rem;
     }
-
     .resources-container.grid {
       grid-template-columns: repeat(2, 1fr);
     }
-
     .resource-item {
       background: #fff;
       border: 2px solid #ccfbf1;
@@ -159,13 +140,11 @@
       display: flex;
       flex-direction: column;
     }
-
     .resource-item:hover {
       border-color: #2dd4bf;
       box-shadow: 0 4px 16px rgba(13,148,136,0.12);
       transform: translateY(-2px);
     }
-
     .resource-thumbnail {
       height: 120px;
       background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
@@ -176,14 +155,12 @@
       font-size: 2rem;
       font-weight: 700;
     }
-
     .resource-content {
       padding: 1.25rem;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
-
     .resource-type {
       display: inline-block;
       padding: 0.25rem 0.75rem;
@@ -195,14 +172,12 @@
       margin-bottom: 0.5rem;
       width: fit-content;
     }
-
     .resource-title {
       font-size: 1rem;
       font-weight: 700;
       color: #134e4a;
       margin-bottom: 0.5rem;
     }
-
     .resource-meta {
       display: flex;
       gap: 1rem;
@@ -211,13 +186,11 @@
       margin-bottom: 0.75rem;
       flex-wrap: wrap;
     }
-
     .resource-meta span {
       display: flex;
       align-items: center;
       gap: 0.25rem;
     }
-
     .resource-description {
       font-size: 0.8125rem;
       color: #6b7280;
@@ -225,7 +198,6 @@
       margin-bottom: 1rem;
       flex: 1;
     }
-
     .resource-footer {
       display: flex;
       justify-content: space-between;
@@ -233,7 +205,6 @@
       padding-top: 1rem;
       border-top: 1px solid #e5e7eb;
     }
-
     .resource-rating {
       display: flex;
       align-items: center;
@@ -241,7 +212,6 @@
       font-size: 0.8125rem;
       color: #f59e0b;
     }
-
     .btn-access {
       display: inline-flex;
       align-items: center;
@@ -255,39 +225,32 @@
       cursor: pointer;
       transition: all 0.3s;
     }
-
     .btn-access:hover {
       background: #0f766e;
       color: #fff;
     }
-
     .empty-state {
       text-align: center;
       padding: 3rem 1rem;
     }
-
     .empty-state svg {
       width: 80px;
       height: 80px;
       color: #d1d5db;
       margin-bottom: 1rem;
     }
-
     .empty-state h3 {
       font-size: 1.25rem;
       color: #6b7280;
       margin-bottom: 0.5rem;
     }
-
     .empty-state p {
       color: #9ca3af;
     }
-
     @media (min-width: 768px) {
       .elibrary-hero h1 { font-size: 3rem; }
       .resources-container.grid { grid-template-columns: repeat(3, 1fr); }
     }
-
     @media (min-width: 1024px) {
       .elibrary-hero h1 { font-size: 3.5rem; }
       .resources-container.grid { grid-template-columns: repeat(4, 1fr); }
@@ -307,9 +270,10 @@
         <a href="index.html#consultancy">Consultancy</a>
         <a href="index.html#courses">Skill Development</a>
         <a href="elibrary.html">E-Library</a>
-        <a href="index.html#blog">Blog</a>
-        <a href="index.html#about">About us</a>
-        <a href="index.html#team">Project</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About us</a>
+        <a href="project.html">Project</a>
+		<a href="donate.html" class="nav-donate-link">Donate</a>
       </nav>
       <a href="#" class="btn-join">Join Us</a>
       <button id="menuToggle" aria-label="Toggle menu">
@@ -325,6 +289,7 @@
       <a href="index.html#blog">Blog</a>
       <a href="index.html#about">About us</a>
       <a href="index.html#team">Project</a>
+	  <a href="donate.html" class="nav-donate-link">Donate</a>
       <a href="#" class="btn-join-mobile">Join Us</a>
     </nav>
   </header>
@@ -358,16 +323,18 @@
         <div class="resource-header">
           <div class="resource-count">Showing <span id="resourceCount">8</span> resources</div>
           <div class="view-toggle">
-            <button class="active" onclick="toggleView(this, 'list')">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>
-            </button>
-            <button onclick="toggleView(this, 'grid')">
+            <!-- 🔹 Change: remove active from list button, add active to grid button -->
+			<button class="active" onclick="toggleView(this, 'grid')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3"/><rect width="7" height="7" x="14" y="3"/><rect width="7" height="7" x="14" y="14"/><rect width="7" height="7" x="3" y="14"/></svg>
+            </button>
+            <button onclick="toggleView(this, 'list')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>
             </button>
           </div>
         </div>
 
-        <div class="resources-container" id="resourcesContainer">
+        <!-- 🔹 Added "grid" class here -->
+        <div class="resources-container grid" id="resourcesContainer">
           <!-- Resource items will be generated here -->
           <div class="resource-item fade-in">
             <div class="resource-thumbnail">📄</div>
@@ -380,10 +347,7 @@
               </div>
               <p class="resource-description">Comprehensive guide to advanced statistical methodologies used in modern clinical research, including multivariate analysis and regression models.</p>
               <div class="resource-footer">
-                <div class="resource-rating">
-                  <span>★★★★★</span>
-                  <span>(145)</span>
-                </div>
+                <div class="resource-rating"><span>★★★★★</span><span>(145)</span></div>
                 <button class="btn-access">Access <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
               </div>
             </div>
@@ -400,10 +364,7 @@
               </div>
               <p class="resource-description">Essential textbook covering research design principles, methodology selection, and practical implementation strategies for academic researchers.</p>
               <div class="resource-footer">
-                <div class="resource-rating">
-                  <span>★★★★☆</span>
-                  <span>(98)</span>
-                </div>
+                <div class="resource-rating"><span>★★★★☆</span><span>(98)</span></div>
                 <button class="btn-access">Access <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
               </div>
             </div>
@@ -420,10 +381,7 @@
               </div>
               <p class="resource-description">Latest volume featuring peer-reviewed articles on epidemiology, health policy, and community health interventions across multiple countries.</p>
               <div class="resource-footer">
-                <div class="resource-rating">
-                  <span>★★★★★</span>
-                  <span>(212)</span>
-                </div>
+                <div class="resource-rating"><span>★★★★★</span><span>(212)</span></div>
                 <button class="btn-access">Access <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
               </div>
             </div>
@@ -440,10 +398,7 @@
               </div>
               <p class="resource-description">Practical step-by-step guide to using SPSS software for statistical analysis, data management, and generating publication-ready outputs.</p>
               <div class="resource-footer">
-                <div class="resource-rating">
-                  <span>★★★★★</span>
-                  <span>(567)</span>
-                </div>
+                <div class="resource-rating"><span>★★★★★</span><span>(567)</span></div>
                 <button class="btn-access">Access <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
               </div>
             </div>
@@ -460,10 +415,7 @@
               </div>
               <p class="resource-description">In-depth exploration of qualitative research approaches including interviews, focus groups, and thematic analysis in health research contexts.</p>
               <div class="resource-footer">
-                <div class="resource-rating">
-                  <span>★★★★☆</span>
-                  <span>(189)</span>
-                </div>
+                <div class="resource-rating"><span>★★★★☆</span><span>(189)</span></div>
                 <button class="btn-access">Access <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
               </div>
             </div>
@@ -480,10 +432,7 @@
               </div>
               <p class="resource-description">Comprehensive coverage of ethical considerations, regulatory requirements, and best practices in medical and clinical research worldwide.</p>
               <div class="resource-footer">
-                <div class="resource-rating">
-                  <span>★★★★★</span>
-                  <span>(334)</span>
-                </div>
+                <div class="resource-rating"><span>★★★★★</span><span>(334)</span></div>
                 <button class="btn-access">Access <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
               </div>
             </div>
@@ -500,10 +449,7 @@
               </div>
               <p class="resource-description">Latest research on clinical trial design, patient recruitment strategies, data integrity, and outcomes measurement in modern healthcare.</p>
               <div class="resource-footer">
-                <div class="resource-rating">
-                  <span>★★★★☆</span>
-                  <span>(276)</span>
-                </div>
+                <div class="resource-rating"><span>★★★★☆</span><span>(276)</span></div>
                 <button class="btn-access">Access <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
               </div>
             </div>
@@ -520,10 +466,7 @@
               </div>
               <p class="resource-description">Master the art of conducting comprehensive literature reviews with practical tips, database searching techniques, and synthesis strategies.</p>
               <div class="resource-footer">
-                <div class="resource-rating">
-                  <span>★★★★★</span>
-                  <span>(423)</span>
-                </div>
+                <div class="resource-rating"><span>★★★★★</span><span>(423)</span></div>
                 <button class="btn-access">Access <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
               </div>
             </div>
@@ -545,21 +488,18 @@
             <p style="font-size: 0.8125rem; color: #6b7280; margin-bottom: 1rem;">24 resources on quantitative and qualitative research methodologies</p>
             <a href="#" style="display: inline-block; padding: 0.5rem 1.25rem; border: 1px solid #0f766e; color: #134e4a; font-weight: 500; border-radius: 6px; transition: all 0.3s;">Explore</a>
           </div>
-
           <div style="background: #fff; border: 2px solid #ccfbf1; border-radius: 8px; padding: 1.5rem; text-align: center; transition: all 0.3s;" class="fade-in">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🔬</div>
             <h3 style="font-size: 1.125rem; font-weight: 700; color: #134e4a; margin-bottom: 0.5rem;">Clinical Research</h3>
             <p style="font-size: 0.8125rem; color: #6b7280; margin-bottom: 1rem;">19 resources on clinical trials and medical research</p>
             <a href="#" style="display: inline-block; padding: 0.5rem 1.25rem; border: 1px solid #0f766e; color: #134e4a; font-weight: 500; border-radius: 6px; transition: all 0.3s;">Explore</a>
           </div>
-
           <div style="background: #fff; border: 2px solid #ccfbf1; border-radius: 8px; padding: 1.5rem; text-align: center; transition: all 0.3s;" class="fade-in">
             <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
             <h3 style="font-size: 1.125rem; font-weight: 700; color: #134e4a; margin-bottom: 0.5rem;">Data Analysis</h3>
             <p style="font-size: 0.8125rem; color: #6b7280; margin-bottom: 1rem;">31 resources on statistics, SPSS, R, and analysis tools</p>
             <a href="#" style="display: inline-block; padding: 0.5rem 1.25rem; border: 1px solid #0f766e; color: #134e4a; font-weight: 500; border-radius: 6px; transition: all 0.3s;">Explore</a>
           </div>
-
           <div style="background: #fff; border: 2px solid #ccfbf1; border-radius: 8px; padding: 1.5rem; text-align: center; transition: all 0.3s;" class="fade-in">
             <div style="font-size: 3rem; margin-bottom: 1rem;">✍️</div>
             <h3 style="font-size: 1.125rem; font-weight: 700; color: #134e4a; margin-bottom: 0.5rem;">Academic Writing</h3>
@@ -575,72 +515,29 @@
   <footer>
     <div class="container footer-inner">
       <div class="footer-grid">
-        <!-- Brand -->
         <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="logo.png" alt="ARC" />
-            <span>ARC</span>
-          </div>
-          <div class="footer-address">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p>Rabindra Bhaban, Department of Law, RU, Rajshahi-6205</p>
-          </div>
+          <div class="footer-logo"><img src="logo.png" alt="ARC" /><span>ARC</span></div>
+          <div class="footer-address"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><p>Rabindra Bhaban, Department of Law, RU, Rajshahi-6205</p></div>
         </div>
-
-        <!-- Quick Links -->
         <div class="footer-col">
           <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#consultancy">Consultancy</a></li>
-            <li><a href="elibrary.html">E-Library</a></li>
-            <li><a href="index.html#resources">Resources</a></li>
-          </ul>
+          <ul><li><a href="index.html">Home</a></li><li><a href="index.html#consultancy">Consultancy</a></li><li><a href="elibrary.html">E-Library</a></li><li><a href="index.html#resources">Resources</a></li></ul>
         </div>
-
-        <!-- Company -->
         <div class="footer-col">
           <h4>Company</h4>
-          <ul>
-            <li><a href="index.html#about">About us</a></li>
-            <li><a href="#">Refund Policy</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-          </ul>
+          <ul><li><a href="index.html#about">About us</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms & Conditions</a></li></ul>
         </div>
-
-        <!-- Contact -->
         <div class="footer-col">
           <h4>Contact Us</h4>
           <ul class="contact-list">
-            <li>
-              <a href="tel:01712534626">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                01712534626
-              </a>
-            </li>
-            <li>
-              <a href="mailto:arc19@gmail.com">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                arc19@gmail.com
-              </a>
-            </li>
-            <li>
-              <a href="https://facebook.com" target="_blank">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                Facebook Page
-              </a>
-            </li>
+            <li><a href="tel:01712534626"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>01712534626</a></li>
+            <li><a href="mailto:arc19@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>arc19@gmail.com</a></li>
+            <li><a href="https://facebook.com" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook Page</a></li>
           </ul>
         </div>
       </div>
-
       <hr class="footer-divider" />
-
-      <div class="footer-bottom">
-        <p>&copy; 2024 arc.info. All rights reserved.</p>
-        <p>Developed by <a href="#">CubeTech IT</a></p>
-      </div>
+      <div class="footer-bottom"><p>&copy; 2024 arc.info. All rights reserved.</p><p>Developed by <a href="#">CubeTech IT</a></p></div>
     </div>
   </footer>
 
@@ -654,53 +551,36 @@
   <script>
     // E-Library specific functionality
     function filterByType(element, type) {
-      document.querySelectorAll('.filter-chip').forEach(chip => {
-        chip.classList.remove('active');
-      });
+      document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
       element.classList.add('active');
       // Add your filtering logic here
     }
 
     function searchResources() {
       const searchInput = document.getElementById('searchInput').value;
-      if (searchInput.trim() === '') {
-        alert('Please enter a search term');
-      } else {
-        alert('Searching for: ' + searchInput);
-        // Add your search logic here
-      }
+      if (searchInput.trim() === '') alert('Please enter a search term');
+      else alert('Searching for: ' + searchInput);
     }
 
     function toggleView(element, view) {
-      document.querySelectorAll('.view-toggle button').forEach(btn => {
-        btn.classList.remove('active');
-      });
+      document.querySelectorAll('.view-toggle button').forEach(btn => btn.classList.remove('active'));
       element.classList.add('active');
-      
       const container = document.getElementById('resourcesContainer');
-      if (view === 'grid') {
-        container.classList.add('grid');
-      } else {
-        container.classList.remove('grid');
-      }
+      if (view === 'grid') container.classList.add('grid');
+      else container.classList.remove('grid');
     }
 
     // Initialize scroll animations
     document.addEventListener('DOMContentLoaded', function() {
       const fadeElements = document.querySelectorAll('.fade-in');
-      
       const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
-      });
-
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
       fadeElements.forEach(el => observer.observe(el));
     });
   </script>
